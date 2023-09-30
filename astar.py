@@ -10,8 +10,9 @@ class Node:
     def __init__(self, coord=None, parent=None):
         self.coord = coord
         self.parent = parent
-        self.f = 100
-        self.g = 100
+        self.large_num = 100
+        self.f = self.large_num
+        self.g = self.large_num
 
     # defining comparision between nodes    
     def __eq__(self, other):
