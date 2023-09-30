@@ -84,7 +84,7 @@ class AStar:
 
                 for nbr in nbr_list:
                     if not nbr in self.visited:
-                        g_new = current_node.g + self.grid_[nbr.coord[0]][nbr.coord[1]]
+                        g_new = np.sqrt((current_node.coord[0] - nbr.coord[0])**2 + (current_node.coord[1] - nbr.coord[1])**2) + current_node.g
                         if g_new < nbr.g:
                             nbr.g = g_new
                             nbr.f = nbr.g + self.heuristic(nbr)
